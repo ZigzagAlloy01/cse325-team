@@ -102,99 +102,63 @@
             <EditForm Model="@newProduct"
                       OnSubmit="@CreateProduct"
                       class="product-form">
-
                 <DataAnnotationsValidator />
-
                 <div class="product-form-grid">
-
-                    <!-- Name -->
                     <div class="form-field">
-
                         <label for="name" class="form-label">
                             Product Name
                             <span class="required">*</span>
                         </label>
-
                         <InputText id="name"
                                    class="form-control product-input"
                                    placeholder="Enter product name"
                                    @bind-Value="newProduct.Name" />
-
                     </div>
-
-
-                    
                     <div class="form-field">
-
                         <label for="price" class="form-label">
                             Price
                             <span class="required">*</span>
                         </label>
-
                         <InputNumber id="price"
                                      class="form-control product-input"
                                      placeholder="0.00"
                                      @bind-Value="newProduct.Price" />
-
                     </div>
-
-
-                    
                     <div class="form-field full-width">
-
                         <label for="description" class="form-label">
                             Description
                         </label>
-
                         <InputTextArea id="description"
                                        class="form-control product-input"
                                        rows="3"
                                        placeholder="Enter a short product description..."
                                        @bind-Value="newProduct.Description" />
-
                     </div>
-
-
-                    
                     <div class="form-field full-width">
-
                         <label for="imageUrl" class="form-label">
                             Image URL
                         </label>
-
                         <InputText id="imageUrl"
                                    class="form-control product-input"
                                    placeholder="https://example.com/image.jpg"
                                    @bind-Value="newProduct.ImageUrl" />
-
                     </div>
-
                 </div>
-
-
-                
                 <div class="form-actions">
-
                     <button type="submit"
                             class="btn product-primary">
 
                         @(isEditing ? "Update Product" : "Add Product")
-
                     </button>
-
                     @if (isEditing)
                     {
                         <button type="button"
                                 class="btn product-secondary"
                                 @onclick="CancelEdit">
-
                             Cancel
-
                         </button>
                     }
-
                 </div>
-
             </EditForm>
 
         </div>
